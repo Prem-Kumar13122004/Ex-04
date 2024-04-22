@@ -96,13 +96,14 @@ buf.append(hexDigit[(b[j] >> 4) & 0x0f]);
 buf.append(hexDigit[b[j] & 0x0f]); }
 return buf.toString(); }
 }
+
+
 ```
 
 
 
 
 ## OUTPUT:
-
 ![image](https://github.com/Raghulshanmugam2004/Ex-04/assets/119561118/733af335-e1ec-425b-9858-bd491463b335)
 
 ## RESULT:
