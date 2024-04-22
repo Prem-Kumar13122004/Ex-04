@@ -1,27 +1,32 @@
 ## SECURE HASH FUNCTION (SHA)
-## DATE :
+
 ## AIM:
 Develop a program to implement Secure Hash Algorithm (SHA-1)
+
 ## SECURED HASH ALGORITHM-1 (SHA-1):
-```
-Step 1: Append Padding Bits….
+
+Step 1:Append Padding Bits….
 Message is “padded” with a 1 and as many 0’s as necessary to bring the
 message length to 64 bits fewer than an even multiple of 512.
+
 Step 2: Append Length....
 64 bits are appended to the end of the padded message. These bits hold the
 binary format of 64 bits indicating the length of the original message.
+
 Step 3: Prepare Processing Functions….
 SHA1 requires 80 processing functions defined as:
 f(t;B,C,D) = (B AND C) OR ((NOT B) AND D) ( 0 <= t <= 19)
 f(t;B,C,D) = B XOR C XOR D (20 <= t <= 39)
 f(t;B,C,D) = (B AND C) OR (B AND D) OR (C AND D) (40 <= t<=59)
 f(t;B,C,D) = B XOR C XOR D (60 <= t <= 79)
+
 Step 4: Prepare Processing Constants....
 SHA1 requires 80 processing constant words defined as:
 K(t) = 0x5A827999 ( 0 <= t <= 19)
 K(t) = 0x6ED9EBA1 (20 <= t <= 39)
 K(t) = 0x8F1BBCDC (40 <= t <= 59)
 K(t) = 0xCA62C1D6 (60 <= t <= 79)
+
 Step 5: Initialize Buffers….
 SHA1 requires 160 bits or 5 buffers of words (32 bits):
 H0 = 0x67452301
@@ -29,6 +34,7 @@ H1 = 0xEFCDAB89
 H2 = 0x98BADCFE
 H3 = 0x10325476
 H4 = 0xC3D2E1F0
+
 Step 6: Processing Message in 512-bit blocks (L blocks in total message)….
 This is the main task of SHA1 algorithm which loops through the padded
 and appended message in 512-bit blocks.
@@ -36,6 +42,7 @@ Input and predefined functions: M[1, 2, ..., L]: Blocks of the padded and append
 message f(0;B,C,D), f(1,B,C,D), ..., f(79,B,C,D): 80 Processing Functions K(0), K(1),
 ..., K(79): 80 Processing Constant Words
 H0, H1, H2, H3, H4, H5: 5 Word buffers with initial values
+
 Step 6: Pseudo Code….
 For loop on k = 1 to L
 (W(0),W(1),...,W(15)) = M[k] /* Divide M[k] into 16 words */
@@ -50,7 +57,7 @@ C = B<<<30, B = A, A = TEMP
  End of for loop
 Output:
 H0, H1, H2, H3, H4, H5: Word buffers with final message digest
-```
+
 ## PROGRAM
 ```
 import java.security.*;
@@ -92,33 +99,21 @@ return buf.toString(); }
 }
 ```
 ## OUTPUT:
-```
-C:\Program Files\Java\jdk1.6.0_20\bin>javac SHA1.java
-C:\Program Files\Java\jdk1.6.0_20\bin>java SHA1
-Message digest object info:
-Algorithm = SHA1
-Provider = SUN version 1.6
-ToString = SHA1 Message Digest from SUN, <initialized>
-SHA1("") = DA39A3EE5E6B4B0D3255BFEF95601890AFD80709
-SHA1("abc") = A9993E364706816ABA3E25717850C26C9CD0D89D
-SHA1("abcdefghijklmnopqrstuvwxyz") =
-32D10C7B8CF96570CA04CE37F2A19D84240D3A89
-```
+![322755169-cc8c7fad-2e14-45a7-bde4-1adfc2c471ee](https://github.com/IsaacAIML2023/Ex-04/assets/119291590/336b2e77-8ab4-405b-816d-6638f07987e5)
+
+
+
 ## RESULT:
 Thus SHA was implemented successfully.
 
 
-
-
-
-
-  ## DIGITAL SIGNATURE STANDARD
+## DIGITAL SIGNATURE STANDARD
 
 ## AIM:
 To write a C program to implement the signature scheme named digital
 signature standard (Euclidean Algorithm).
 ## ALGORITHM:
-```
+
 STEP-1: Alice and Bob are investigating a forgery case of x and y.
 STEP-2: X had document signed by him but he says he did not sign that document digitally.
 STEP-3: Alice reads the two prime numbers p and a.
@@ -127,7 +122,7 @@ STEP-5: With these values, he applies it to the elliptic curve cryptographic equ
 y
 STEP-6: Comparing this ‘y’ with actual y’s document, Alice concludes that y is a
 forgery.
-```
+
 ## PROGRAM: (Digital Signature Standard)
 ```
 import java.util.*;
@@ -224,7 +219,8 @@ signature\n ");
 }
 ```
 ## OUTPUT:
-![image](https://github.com/IsaacAIML2023/Ex-04/assets/158465339/337034c5-ea1c-4332-a753-7c5b679325f2)
+![322756062-e1ff1fe8-6dbb-4f6a-a00a-0c259644c640](https://github.com/IsaacAIML2023/Ex-04/assets/119291590/7e8fd0e5-3e04-4313-a361-fe5a4d6a15fe)
+
 
 ## RESULT:
 Thus program to implement the signature scheme named digital signature standard (Euclidean Algorithm) is implementeds successfully.
